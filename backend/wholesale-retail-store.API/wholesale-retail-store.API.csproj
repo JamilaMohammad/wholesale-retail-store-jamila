@@ -1,15 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
+      <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>wholesale_retail_store.API</RootNamespace>
   </PropertyGroup>
-
+    
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.19" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4" />
+  </ItemGroup>
+    
+  <ItemGroup>
+    <ProjectReference Include="..\wholesale-retail-store.Application\wholesale-retail-store.Application.csproj" />
+    <ProjectReference Include="..\wholesale-retail-store.Infrastructure\wholesale-retail-store.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

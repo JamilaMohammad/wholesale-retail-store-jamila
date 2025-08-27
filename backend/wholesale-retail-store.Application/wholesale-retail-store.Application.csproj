@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>wholesale_retail_store.Application</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Automapper" Version="15.0.1" />
+    <PackageReference Include="Automapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="mediatr" Version="13.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\wholesale-retail-store.Domain\wholesale-retail-store.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

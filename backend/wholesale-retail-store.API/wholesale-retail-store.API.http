@@ -1,6 +1,0 @@
-@wholesale_retail_store.API_HostAddress = http://localhost:5193
-
-GET {{wholesale_retail_store.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
