@@ -19,4 +19,6 @@ public class DatabaseController : ControllerBase
         _service.GetAllProducts();
         return string.Empty;
     }
+    
+    
 }

@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+using System.Reflection;
 
 using wholesale_retail_store.Application;
 using wholesale_retail_store.Infrastructure;
@@ -10,6 +10,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddApplicationExtensions();
 builder.Services.AddInfrastructureExtensions();
+
+builder.Services.AddMediatR(cfg =>
+    cfg.RegisterServicesFromAssembly(typeof(MediatrEntryPoint).Assembly));
 
 var app = builder.Build();
 
