@@ -13,7 +13,7 @@ builder.Services.AddInfrastructureExtensions();
 
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(typeof(MediatrEntryPoint).Assembly));
-
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "dev")
