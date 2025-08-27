@@ -1,0 +1,6 @@
+@wholesale_retail_store.BFF_HostAddress = http://localhost:5118
+
+GET {{wholesale_retail_store.BFF_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
