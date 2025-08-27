@@ -1,13 +1,15 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
+
+using wholesale_retail_store.Application;
+using wholesale_retail_store.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddApplicationExtensions();
+builder.Services.AddInfrastructureExtensions();
 
 var app = builder.Build();
 

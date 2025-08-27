@@ -11,5 +11,10 @@
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4" />
   </ItemGroup>
+    
+  <ItemGroup>
+    <ProjectReference Include="..\wholesale-retail-store.Application\wholesale-retail-store.Application.csproj" />
+    <ProjectReference Include="..\wholesale-retail-store.Infrastructure\wholesale-retail-store.Infrastructure.csproj" />
+  </ItemGroup>
 
 </Project>
