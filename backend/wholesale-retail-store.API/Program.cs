@@ -16,8 +16,6 @@ builder.Services.AddInfrastructureExtensions();
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(typeof(MediatrEntryPoint).Assembly));
 
-
-
 builder.Services.AddDbContext<AppDbContext>(opt => 
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -33,8 +31,6 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = string.Empty;
     });
 }
-
-
 app.UseRouting();  
 app.UseHttpsRedirection();
 app.UseAuthorization();

@@ -1,28 +1,34 @@
+using MediatR;
+using Microsoft.EntityFrameworkCore;
 using wholesale_retail_store.Domain.Entities;
 using wholesale_retail_store.Domain.Interface;
+using wholesale_retail_store.Infrastructure.Persistence;
 
 namespace wholesale_retail_store.Infrastructure.Repositories;
 
 public class ProductRepository : IProductRepository
 {
-    
+    private readonly AppDbContext _context;
+    public ProductRepository(AppDbContext context)
+    {
+        _context = context;
+    }
     public async Task<IEnumerable<Product>> GetAllProductsAsync()
     {
-        return new List<Product>();
+        var response = await _context.Products.ToListAsync();
+        return response;
     }
 
-    public Task<Product> GetProductByIdAsync(int id)
+    public async Task<Product> GetProductByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var response = await _context.Products.FirstOrDefaultAsync(p => p.ProductId == id);
+        return response;
     }
 
-    public Task<IEnumerable<Product>> AddProductsAsync(IEnumerable<Product> products)
+    public async Task AddProductsAsync(IEnumerable<Product> products)
     {
-        throw new NotImplementedException();
+        await _context.Products.AddRangeAsync(products);
+        await _context.SaveChangesAsync();
     }
-
-    public Task<IEnumerable<Product>> AddProductsAsync()
-    {
-        throw new NotImplementedException();
-    }
+    
 }

@@ -29,12 +29,15 @@ public class ProductController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetProductByIdAsync(int id)
     {
-        var product = await _mediator.Send(new GetProductByIdQuery());
+        var product = await _mediator.Send(new GetProductByIdQuery
+        {
+            Id = id
+        });
         return Ok(product);
     }
 
     [HttpPost]
-    public async Task<IActionResult> AddProducts([FromForm] IEnumerable<ProductModel> product)
+    public async Task<IActionResult> AddProducts([FromBody] List<ProductModel> product)
     {
         var products = await _mediator.Send(new AddProductsCommand
         {
