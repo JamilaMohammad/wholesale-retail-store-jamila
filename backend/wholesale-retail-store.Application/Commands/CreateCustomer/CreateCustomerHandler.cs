@@ -1,5 +1,4 @@
 using MediatR;
-using wholesale_retail_store.Application.Models;
 using wholesale_retail_store.Domain.Entities;
 using wholesale_retail_store.Domain.Interface;
 
