@@ -15,5 +15,6 @@ frontend
 cd into frontend 
 
 npm install
+
 npm run dev
 
