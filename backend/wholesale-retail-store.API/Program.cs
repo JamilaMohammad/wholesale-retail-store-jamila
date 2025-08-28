@@ -19,6 +19,15 @@ builder.Services.AddMediatR(cfg =>
 builder.Services.AddDbContext<AppDbContext>(opt => 
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -35,5 +44,5 @@ app.UseRouting();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers(); // Map controller routes
-
+app.UseCors("AllowFrontend");
 app.Run();

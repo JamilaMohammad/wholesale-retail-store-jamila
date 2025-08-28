@@ -3,9 +3,8 @@ using wholesale_retail_store.Application.Models;
 
 namespace wholesale_retail_store.Application.Commands.CreateCustomer;
 
-public class CreateCustomerCommand : IRequest<CustomerDto>
+public class CreateCustomerCommand : IRequest<Unit>
 {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
+    public CustomerDto Customer { get; set; }
     
 }

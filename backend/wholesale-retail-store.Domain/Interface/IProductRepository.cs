@@ -1,4 +1,3 @@
-using MediatR;
 using wholesale_retail_store.Domain.Entities;
 
 namespace wholesale_retail_store.Domain.Interface;

@@ -1,7 +1,9 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using wholesale_retail_store.Application.Commands.CreateCustomer;
+using wholesale_retail_store.Application.Models;
 using wholesale_retail_store.Application.Queries.GetCustomerById;
+using wholesale_retail_store.Domain.Entities;
 
 namespace wholesale_retail_store.API.Controllers;
 
@@ -29,12 +31,12 @@ public class CustomerController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateCustomerAsync()
+    public async Task<IActionResult> CreateCustomerAsync([FromBody] CustomerDto Customer)
     {
         var response = await _mediator.Send(new CreateCustomerCommand
         {
-            
-        }) ?? throw new Exception("Failed to create customer");
+            Customer = Customer
+        });
         return Ok(response);
     }
 }
