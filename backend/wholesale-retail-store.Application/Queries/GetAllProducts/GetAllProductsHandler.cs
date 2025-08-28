@@ -1,11 +1,10 @@
 using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using wholesale_retail_store.Application.Interface;
 using wholesale_retail_store.Application.Models;
-using wholesale_retail_store.Application.Queries;
+using wholesale_retail_store.Domain.Interface;
 
-namespace wholesale_retail_store.Application.Handlers;
+namespace wholesale_retail_store.Application.Queries.GetAllProducts;
 
 public class GetAllProductsHandler : IRequestHandler<GetAllProductQuery, IEnumerable<ProductModel>>
 {
@@ -13,8 +12,7 @@ public class GetAllProductsHandler : IRequestHandler<GetAllProductQuery, IEnumer
     private readonly IMapper _mapper;
     private readonly ILogger<GetAllProductsHandler> _logger;
     
-    public GetAllProductsHandler(IProductRepository repository,
-        IMapper mapper,
+    public GetAllProductsHandler(IProductRepository repository, IMapper mapper,
         ILogger<GetAllProductsHandler> logger)
     {
         _repository = repository;

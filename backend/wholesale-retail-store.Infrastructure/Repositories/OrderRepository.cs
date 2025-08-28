@@ -1,6 +1,6 @@
-using wholesale_retail_store.Application.Interface;
+using wholesale_retail_store.Domain.Interface;
 
-namespace wholesale_retail_store.Infrastructure;
+namespace wholesale_retail_store.Infrastructure.Repositories;
 
 public class OrderRepository : IOrderRepository
 {

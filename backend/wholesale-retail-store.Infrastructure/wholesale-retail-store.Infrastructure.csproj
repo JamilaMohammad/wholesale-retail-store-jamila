@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Persistence\Migrations\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\wholesale-retail-store.Application\wholesale-retail-store.Application.csproj" />
   </ItemGroup>
 

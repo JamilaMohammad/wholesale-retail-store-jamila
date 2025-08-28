@@ -1,9 +1,9 @@
 namespace wholesale_retail_store.Domain.Entities;
 
-public class Customer
+public class Payment
 {
-    public Guid Id { get; set; }
-    public string Name { get; set; }
+    public Guid CustomerId { get; set; }
+    public Guid PaymentId { get; set; }
     public string Data { get; set; }
     public DateTime CreatedAt { get; set; }
 }

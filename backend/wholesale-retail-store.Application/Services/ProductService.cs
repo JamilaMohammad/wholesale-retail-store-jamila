@@ -1,7 +1,8 @@
 using AutoMapper;
 using Microsoft.Extensions.Logging;
-using wholesale_retail_store.Application.Interface;
 using wholesale_retail_store.Application.Models;
+using wholesale_retail_store.Domain.Entities;
+using wholesale_retail_store.Domain.Interface;
 
 namespace wholesale_retail_store.Application.Services;
 
@@ -21,11 +22,11 @@ public class ProductService : IProductService
     }
 
 
-    public async Task<IEnumerable<ProductModel>> GetAllProducts()
+    public async Task<IEnumerable<Product>> GetAllProducts()
     {
         var response = await _repository.GetAllProductsAsync();
         _logger.LogInformation("Fetching all products");
-        return _mapper.Map<IEnumerable<ProductModel>>(response);
+        return _mapper.Map<IEnumerable<Product>>(response);
 
     }
 }

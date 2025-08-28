@@ -1,8 +1,8 @@
 using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using wholesale_retail_store.Application.Interface;
 using wholesale_retail_store.Application.Models;
+using wholesale_retail_store.Domain.Interface;
 
 namespace wholesale_retail_store.Application.Queries.GetProductById;
 
