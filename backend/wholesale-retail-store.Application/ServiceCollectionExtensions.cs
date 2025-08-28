@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
-using wholesale_retail_store.Application.Interface;
 using wholesale_retail_store.Application.Services;
+using wholesale_retail_store.Domain.Interface;
 
 namespace wholesale_retail_store.Application;
 

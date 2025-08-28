@@ -31,7 +31,7 @@ public class CustomerController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateCustomerAsync()
     {
-        var response = _mediator.Send(new CreateCustomerCommand
+        var response = await _mediator.Send(new CreateCustomerCommand
         {
             
         }) ?? throw new Exception("Failed to create customer");

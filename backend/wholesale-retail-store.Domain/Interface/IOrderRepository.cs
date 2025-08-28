@@ -1,4 +1,4 @@
-namespace wholesale_retail_store.Application.Interface;
+namespace wholesale_retail_store.Domain.Interface;
 
 public interface IOrderRepository
 {

@@ -1,7 +1,7 @@
-using wholesale_retail_store.Application.Interface;
-using wholesale_retail_store.Application.Models;
+using wholesale_retail_store.Domain.Entities;
+using wholesale_retail_store.Domain.Interface;
 
-namespace wholesale_retail_store.Infrastructure;
+namespace wholesale_retail_store.Infrastructure.Repositories;
 
 public class CustomerRepository : ICustomerRepository
 {
@@ -10,7 +10,7 @@ public class CustomerRepository : ICustomerRepository
         throw new NotImplementedException();
     }
 
-    public Task<CustomerDto> GetCustomerByIdAsync(Guid id)
+    public Task<Customer> GetCustomerByIdAsync(Guid id)
     {
         throw new NotImplementedException();
     }
