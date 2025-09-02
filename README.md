@@ -1,5 +1,5 @@
-# wholesale-retail-store-jamila
-Online store that supports both wholesale and retail customers
+#online store that is able to facilitate wholesale and retail shopping
+
 
 Requirements
 
